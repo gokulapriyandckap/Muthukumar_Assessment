@@ -116,7 +116,7 @@
 </body>
 </html>
 
-//CSS Style for Home.php.
+
 <style>
     h1 {
         margin-left: 8rem;
@@ -180,6 +180,10 @@
        color: white;
        font-weight: bold;
    }
+   #addvalue:hover{
+       transform:scale(1);
+       box-shadow: 0 20px 55px rgba(0,0,0,0.14), 0 15px 20px rgba(0,0,0,0.14);
+   }
    #image{
        height: 5rem;
        margin-top: 10px;
@@ -212,5 +216,9 @@
         width: 10rem;
         font-weight: bold;
         margin-top: 2.8rem;
+    }
+    #searchBtn:hover{
+        transform:scale(1);
+        box-shadow: 0 20px 55px rgba(0,0,0,0.14), 0 15px 20px rgba(0,0,0,0.14);
     }
 </style>

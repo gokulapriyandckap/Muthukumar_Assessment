@@ -6,7 +6,7 @@ if (count($allDatabases) == 0){
 <body>
 <div class="container">
 <img class="norResultsImg" src="../images/empty.59d15b3c.gif">
-<h2 class="noresultfoundTxt">Oops, Database Not Found :(</h2>
+<h2 class="noresultfoundTxt">Oops, No Database Found :(</h2>
     <a href="/"> <button class="addColumn">Back</button></a>
 </div>
 </body>

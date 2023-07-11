@@ -48,7 +48,7 @@
 <Script>
     let addColumnBtn = document.querySelector('.addColumn');
     let trRow = document.querySelector('.columnRow');
-        let form = document.querySelector('form');
+    let form = document.querySelector('form');
 
     addColumnBtn.addEventListener('click',(e)=>{
         let input = document.createElement('input');
@@ -90,14 +90,8 @@
         tr.appendChild(input);
         tr.appendChild(select);
 
-        // console.log(tr)
         trRow.appendChild(tr)
         table.append(trRow);
-
-        // form.appendChild(tr)
-        // trRow.append(form)
-        // table.append(trRow)
-
     })
 </Script>
 
@@ -145,6 +139,10 @@
     }
     .addColumn:active {
         box-shadow: 2px 2px 5px #3F51B5;
+    }
+    .addColumn:hover{
+        transform:scale(1);
+        box-shadow: 0 20px 55px rgba(0,0,0,0.14), 0 15px 20px rgba(0,0,0,0.14);
     }
     .table{
         margin-left: 190px;
