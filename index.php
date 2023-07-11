@@ -21,11 +21,14 @@ if (isset($_POST['action']))
         case 'addColumnsToDb';
             $controllers->addColumnsToDb($_POST);
             break;
-        case 'addTable';
-            $controllers->addTable($_POST);
+        case 'AddValues';
+            $controllers->AddValues($_POST);
             break;
-        case 'addTablesToDb';
-            $controllers->addTablesToDb($_POST);
+        case 'addValuesToDb';
+            $controllers->addValuesToDb($_POST);
+            break;
+        case 'searchDb';
+            $controllers->searchDb($_POST);
             break;
         default:
             $controllers->index();

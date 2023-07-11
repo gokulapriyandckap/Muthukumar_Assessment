@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -25,8 +24,9 @@
     <div class="container">
     <tr class="columnRow">
         <form action="../index.php" method="post">
-        <input name="columnName"  placeholder="Column Name" type="text">
-        <select name="dataType">
+            <input name="tableName"  placeholder="Table Name" type="text">
+            <input name="columnName[]"  placeholder="Column Name" type="text">
+        <select name="dataType[]">
             <option value="int">Int</option>
             <option value="varchar(255)">Varchar</option>
             <option value="DATETIME">Date Time</option>
@@ -36,7 +36,7 @@
         <button  class="addColumn">Add One Column</button>
         <input  name="dbnameForColumn" hidden value=" <?php echo($dbNameColumn); ?>" >
         <input hidden name="action" value="addColumnsToDb">
-        <button  class="addColumn">Submit</button>
+        <button type="submit" class="addColumn">Submit</button>
        <a href="/"> <button class="addColumn">Back</button></a>
         </form>
     </div>
@@ -48,20 +48,22 @@
 <Script>
     let addColumnBtn = document.querySelector('.addColumn');
     let trRow = document.querySelector('.columnRow');
+        let form = document.querySelector('form');
 
     addColumnBtn.addEventListener('click',(e)=>{
         let input = document.createElement('input');
+        input.classList.add('columnName')
         input.innerHTML = "<input type";
         input.placeholder = 'Column Name';
         input.type = 'text';
-        input.name = 'columnName';
+        input.name = 'columnName[]';
 
         let table = document.querySelector('.table');
 
         let tr = document.createElement('tr');
 
         let select = document.createElement('select');
-        select.name ='dataType';
+        select.name ='dataType[]';
 
         let opt1 = document.createElement('option');
         let opt2 = document.createElement('option');
@@ -88,15 +90,21 @@
         tr.appendChild(input);
         tr.appendChild(select);
 
+        // console.log(tr)
         trRow.appendChild(tr)
         table.append(trRow);
+
+        // form.appendChild(tr)
+        // trRow.append(form)
+        // table.append(trRow)
+
     })
 </Script>
 
 
 <Style>
     h1{
-        background: linear-gradient(45deg, #97239b, #9701ff);
+        background: #0b474d;
         color: white;
     }
     .main_container{
@@ -109,7 +117,7 @@
     input{margin-right: 1rem;
     color: white;
     text-align: center;
-    background-color: #082b69;
+    background-color: #0b474d;
     height: 2rem;
     width: 15rem;
     border-radius: 6px;
@@ -119,14 +127,14 @@
     select {
         color: white;
         text-align: center;
-        background-color: #082b69;
+        background-color:  #0b474d;
         height: 2rem;
         border-radius: 6px;
         font-size: large;
         font-weight: 600;
     }
     .addColumn {
-        background: #3F51B5;
+        background: #0b474d;
         color: white;
         padding: 4px;
         height: 2.5rem;
@@ -138,5 +146,13 @@
     .addColumn:active {
         box-shadow: 2px 2px 5px #3F51B5;
     }
-
+    .table{
+        margin-left: 190px;
+        margin-top: 10px;
+    }
+    .columnName{
+        margin-top: 10px;
+        margin-left: 8.2rem;
+    }
+    }
 </Style>
